@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mediumApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medium App</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+
+</head>
+
+<body ng-controller="PostController">
+
+    <button ng-click="buscarPosts()">Buscar posts</button>
+
+    <div ng-controller="DeleteModalCtrl" style="border: 1px solid #ccc; margin: 10px; padding: 10px;">
+        <div ng-repeat="post in posts">
+            <!-- 🔹 Ao clicar no título, abre o modal -->
+            <a href="" ng-click="openDeleteModal(post)">
+                <h3>{{ post.title }}</h3>
+            </a>
+            <p>{{ post.text }}</p>
+        </div>
+    </div>
+
+    <!-- 🔹 Template do modal (pode virar arquivo separado depois) -->
+    <script type="text/ng-template" id="deletePostModal.html">
+    <div class="modal-header">
+      <h3 class="modal-title">Confirmar exclusão</h3>
+    </div>
+
+    <div class="modal-body">
+      <p>Tem certeza que deseja excluir o post <b>{{ post.title }}</b>?</p>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn btn-danger" ng-click="confirmar()">Excluir</button>
+      <button class="btn btn-secondary" ng-click="cancelar()">Cancelar</button>
+    </div>
+  </script>
+
+</body>
+
+</html>
