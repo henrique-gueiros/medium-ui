@@ -1,0 +1,58 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h3 class="modal-title">Criar Novo Post</h3>
+  </div>
+  <div class="doca modal-body">
+    <form name="postForm" novalidate>
+      <div class="doca-form__field doca-form__field--required" ng-class="{'has-error': postForm.title.$invalid && postForm.title.$dirty}">
+        <label class="doca-form__label" for="postTitle">Título</label>
+        <div class="doca-form-control__icon-container">
+            <input
+              type="text"
+              class="doca-form-control"
+              id="postTitle"
+              name="title"
+              ng-model="post.title"
+              placeholder="Digite o título do post"
+              required
+            />
+        </div>
+        <p ng-show="postForm.title.$invalid && postForm.title.$dirty" class="help-block">O título é obrigatório.</p>
+      </div>
+
+      <div class="doca-form__field doca-form__field--required" ng-class="{'has-error': postForm.summary.$invalid && postForm.summary.$dirty}">
+        <label class="doca-form__label" for="postSummary">Resumo</label>
+        <div class="doca-form-control__icon-container">
+            <input
+              type="text"
+              class="doca-form-control"
+              id="postSummary"
+              name="summary"
+              ng-model="post.summary"
+              placeholder="Digite o resumo do post"
+              required
+            />
+        </div>
+        <p ng-show="postForm.summary.$invalid && postForm.summary.$dirty" class="help-block">O resumo é obrigatório.</p>
+      </div>
+
+      <div class="doca-form__field doca-form__field--required" ng-class="{'has-error': postForm.text.$invalid && postForm.text.$dirty}">
+        <label class="doca-form__label" for="postText">Conteúdo</label>
+        <textarea
+          class="doca-form-control"
+          id="postText"
+          name="text"
+          ng-model="post.text"
+          placeholder="Digite o conteúdo do post"
+          required
+        ></textarea>
+        <p ng-show="postForm.text.$invalid && postForm.text.$dirty" class="help-block">O conteúdo é obrigatório.</p>
+      </div>
+    </form>
+  </div>
+  <div class="doca modal-footer">
+    <button class="doca-button doca-button--large doca-button--secondary" ng-click="cancel()">Cancelar</button>
+    <button class="doca-button doca-button--large doca-button--blue" ng-click="submit()" ng-disabled="postForm.$invalid">Publicar</button>
+  </div>
+</div>
+

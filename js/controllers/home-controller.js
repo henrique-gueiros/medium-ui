@@ -1,5 +1,5 @@
 app.controller('homeController', function ($scope, postService, $modal, $rootScope) {
-
+  $scope.isUserLoggedIn = $rootScope.userLogged;
   $scope.posts = [];
 
   const buscarPosts = function () {
