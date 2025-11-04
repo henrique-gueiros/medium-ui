@@ -1,16 +1,19 @@
-app.controller('PostController', function ($scope, postService, $modal) {
+app.controller('homeController', function ($scope, postService, $modal, $rootScope) {
 
   $scope.posts = [];
 
-  $scope.buscarPosts = function () {
+  const buscarPosts = function () {
     postService.getPosts()
       .then(function (response) {
         console.log("✅ Sucesso!", response.data);
         $scope.posts = response.data.data.posts;
       })
       .catch(function (error) {
-        console.error("❌ Erro na requisição:", error);
+        console.error("Erro na requisição:", error);
       });
   };
+
+  buscarPosts();
+
 
 });

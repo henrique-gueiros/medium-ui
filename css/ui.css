@@ -1,0 +1,117 @@
+:root {
+    --color-border: rgba(20, 20, 20, 0.06);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    border-bottom: 1px solid var(--color-border);
+    margin-top: 1.5px;
+}
+
+.header-left{
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+}
+
+.header-logo {
+  width: 110px;
+}
+
+.header-search {
+  font-size: 1.3rem;
+  background-color: #f9fafb;
+  margin-left: 12px;
+  width: 18rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: 9999px;
+  color: #000;
+  border: none;
+  height: 3.7rem;
+}
+
+/* Estilo da navegação */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 13px;
+  font-weight: 300;
+  color: #4b5563;
+}
+
+.nav-item {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-item:hover {
+  color: #000;
+  transition: color 0.1s;
+}
+
+/* Estilo do ícone de busca */
+.nav-icon {
+  width: 2rem;
+  height: 2rem;
+  color: #6b6b6b;
+  cursor: pointer;
+  transition: color 0.1s;
+}
+
+.nav-icon:hover {
+  color: #4b5563;
+}
+
+.logout-button {
+  background-color: rgb(247, 52, 52);
+  padding: 6px;
+  border-radius: 9999px;
+}
+
+.logout-button:hover {
+  background-color: red;
+}
+
+/* Estilo do ícone circular */
+.nav-circle-icon {
+  width: 40px;
+  height: 40px;
+  color: #d1d5db;
+  cursor: pointer;
+  transition: color 0.1s;
+}
+
+.nav-circle-icon:hover {
+  color: #4b5563;
+}
+
+.nav-item-write {
+  color: #6b6b6b;
+}
+
+/* Seleciona o contêiner do texto e ícone (a div que contém 'Write') */
+.nav-item-write:hover svg {
+  color: black; /* Muda a cor do ícone para preto */
+}
+
+.nav-item-write:hover {
+  color: black; /* Muda a cor do texto para preto */
+}
+
+.post {
+  max-width: 50rem;
+  margin: auto;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  background-color: white;
+  border-radius: 0.75rem;
+  border: 1px solid #f3f4f6;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}

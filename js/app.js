@@ -8,17 +8,9 @@ app.config(function ($stateProvider, $httpProvider, $urlRouterProvider) {
   $stateProvider.state({
     name: "home",
     url: "/posts",
-    templateUrl: "view/test.html",
-    controller: "PostController",
+    templateUrl: "view/home.html",
+    controller: "homeController",
   });
-  
-  // $stateProvider.state({
-  //   name: "post",
-  //   url: "/posts/:postId",
-  //   templateUrl: "view/post-details.html",
-  //   controller: "postDetailsController",
-  //   onEnter: isAuthorized,
-  // });
 });
 
 const isAuthorized = ($state, $rootScope) => {

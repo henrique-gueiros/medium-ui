@@ -2,27 +2,31 @@
 <html lang="en" ng-app="mediumApp">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medium App</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medium App</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
 
 </head>
 
 <body ng-controller="PostController">
+  <div class="doca">
 
-    <button ng-click="buscarPosts()">Buscar posts</button>
+    <button ng-click="buscarPosts()"
+      class="doca-button doca-button--rounded doca-button--large doca-button--blue">
+      <i className="doca-icon doca-icon__search" />Buscar posts</button>
 
     <div ng-controller="DeleteModalCtrl" style="border: 1px solid #ccc; margin: 10px; padding: 10px;">
-        <div ng-repeat="post in posts">
-            <!-- 🔹 Ao clicar no título, abre o modal -->
-            <a href="" ng-click="openDeleteModal(post)">
-                <h3>{{ post.title }}</h3>
-            </a>
-            <p>{{ post.text }}</p>
-        </div>
+      <div ng-repeat="post in posts">
+        <!-- 🔹 Ao clicar no título, abre o modal -->
+        <a href="" ng-click="openDeleteModal(post)">
+          <h3>{{ post.title }}</h3>
+        </a>
+        <p>{{ post.text }}</p>
+      </div>
     </div>
+
 
     <!-- 🔹 Template do modal (pode virar arquivo separado depois) -->
     <script type="text/ng-template" id="deletePostModal.html">
@@ -39,6 +43,7 @@
       <button class="btn btn-secondary" ng-click="cancelar()">Cancelar</button>
     </div>
   </script>
+  </div>
 
 </body>
 
