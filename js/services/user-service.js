@@ -5,6 +5,9 @@ app.factory('userService', function($http) {
         },
         loginUser: function(userData){
             return $http.post(baseUrl + "users/login", userData);
+        },
+        getUserName: function(userId){
+            return $http.get(baseUrl + "users/name/" + userId);
         }
     }
 });

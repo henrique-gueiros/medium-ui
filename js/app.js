@@ -11,6 +11,13 @@ app.config(function ($stateProvider, $httpProvider, $urlRouterProvider) {
     templateUrl: "view/home.html",
     controller: "homeController",
   });
+
+  $stateProvider.state({
+    name: "post",
+    url: "/posts/:id",
+    templateUrl: "view/post.html",
+    controller: "postController",
+  })
 });
 
 const isAuthorized = ($state, $rootScope) => {
